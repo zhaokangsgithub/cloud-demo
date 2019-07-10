@@ -1,0 +1,9 @@
+server:
+  port: 8088
+spring:
+  datasource:
+    url: jdbc:mysql://120.78.172.84:3306/zkdb
+    username: root
+    password: mojay0118
+mybatis:
+  type-aliases-package: cn.zk
