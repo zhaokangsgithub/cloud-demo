@@ -1,11 +1,12 @@
 package cn.zk.consumer.controller;
 
+import cn.zk.consumer.feign.UserFeign;
 import cn.zk.consumer.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.client.RestTemplate;
 
 @Controller
 @RequestMapping("/user/")
@@ -13,15 +14,18 @@ public class UserController
 {
 
     @Autowired
-    private RestTemplate restTemplate;
+    private DiscoveryClient discoveryClient;
 
-    @RequestMapping("fromConsumer")
+
+    @Autowired
+    private UserFeign userFeign;
+
+    @RequestMapping("fromFeign")
     @ResponseBody
-    public User findByConsumer(Long id)
-    {
-        User user = null;
-        user = restTemplate.getForObject("http://localhost:8088/userController/"+id, User.class);
+    public User queryUserByFeign(Long id){
+
+        User user = userFeign.queryUserById(id);
+        System.out.println(user);
         return user;
     }
-
 }

@@ -8,8 +8,6 @@ import lombok.ToString;
 import java.io.Serializable;
 import java.util.Date;
 
-@Getter
-@Setter
 @ToString
 @Data
 public class User implements Serializable
@@ -45,4 +43,108 @@ public class User implements Serializable
     // 备注
     private String note;
 
+    public static long getSerialVersionUID()
+    {
+        return serialVersionUID;
+    }
+
+    public Long getId()
+    {
+        return id;
+    }
+
+    public void setId(Long id)
+    {
+        this.id = id;
+    }
+
+    public String getUsernName()
+    {
+        return usernName;
+    }
+
+    public void setUsernName(String usernName)
+    {
+        this.usernName = usernName;
+    }
+
+    public String getPassword()
+    {
+        return password;
+    }
+
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public Integer getAge()
+    {
+        return age;
+    }
+
+    public void setAge(Integer age)
+    {
+        this.age = age;
+    }
+
+    public Integer getSex()
+    {
+        return sex;
+    }
+
+    public void setSex(Integer sex)
+    {
+        this.sex = sex;
+    }
+
+    public Date getBirthday()
+    {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday)
+    {
+        this.birthday = birthday;
+    }
+
+    public Date getCreated()
+    {
+        return created;
+    }
+
+    public void setCreated(Date created)
+    {
+        this.created = created;
+    }
+
+    public Date getUpdated()
+    {
+        return updated;
+    }
+
+    public void setUpdated(Date updated)
+    {
+        this.updated = updated;
+    }
+
+    public String getNote()
+    {
+        return note;
+    }
+
+    public void setNote(String note)
+    {
+        this.note = note;
+    }
 }

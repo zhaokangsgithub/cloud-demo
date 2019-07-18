@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @since JDK 1.6
  */
 @Controller
-@RequestMapping("/userController/")
+@RequestMapping("/userService/")
 public class UserController
 {
 
@@ -30,6 +30,7 @@ public class UserController
     @ResponseBody
     public User getUserById(@PathVariable("id")Long id)
     {
+        System.out.println("enter request.........");
        User resp= userService.getUserById(id);
 
        return resp;
